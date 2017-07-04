@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h1>All your Tasks</h1>
+    <% @tasks.each do |task| %>
+      <h2><%= link_to task.name, task_path(task.id) %></h2>
+      <ul>
+        <li>Details: <%= task.details %></li>
+        <%= link_to "Remove Task", task_path(task), method: :delete, class: "btn btn-danger"%>
+      </ul>
+    <% end %>
+
+  <%= link_to "add task", new_task_path, class: "btn btn-success" %>
+</div>
