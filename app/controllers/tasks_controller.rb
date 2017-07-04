@@ -24,6 +24,11 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def update
+    @task.update(task_params)
+    redirect_to tasks_path
+  end
+
   private
   def task_params
     params.required(:task).permit(:name, :details)
